@@ -61,6 +61,7 @@ func main() {
 	router.GET("/stats", func(c *gin.Context) {
 		stats, err := idx.getStatResults(5) // Default amount is 5
 		if err != nil {
+			log.Printf("[ERROR]: %s", err)
 			c.IndentedJSON(http.StatusInternalServerError, gin.H{"error": err})
 		}
 		c.IndentedJSON(200, gin.H{"success": true, "results": stats})
