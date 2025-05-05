@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/ccrawford4/stats/compare/v1.0.0...v1.0.1) (2025-05-05)
+
+
+### Bug Fixes
+
+* updated logging ([6173407](https://github.com/ccrawford4/stats/commit/61734072c42a21d951bedb8a7c7a517f0f366003))
+
 # 1.0.0 (2025-05-05)
 
 
