@@ -23,8 +23,55 @@ func (idx *DBIndex) containsUrl(url string) bool {
 	return result.Error == nil
 }
 
-func (idx *DBIndex) getStatResults(amount uint) *StatResult {
-	return &StatResult{WordMap{}, WordMap{}}
+func (idx *DBIndex) getStatResults(amount uint) (*StatResult, error) {
+	mostFrequentMap := make(WordMap)
+	leastFrequentMap := make(WordMap)
+
+	// Structure to hold word and count data
+	type WordCount struct {
+		WordID     uint
+		Name       string
+		TotalCount int
+	}
+
+	var mostFrequentWords []WordCount
+	var leastFrequentWords []WordCount
+
+	// Query for most frequent words
+	err := idx.db.Model(&WordFrequencyRecord{}).
+		Select("word_frequency_records.word_id, words.name, SUM(word_frequency_records.count) as total_count").
+		Joins("JOIN words ON words.id = word_frequency_records.word_id").
+		Group("word_frequency_records.word_id, words.name").
+		Order("total_count DESC").
+		Limit(int(amount)).
+		Scan(&mostFrequentWords).Error
+	if err != nil {
+		return nil, err
+	}
+
+	// Query for least frequent words
+	err = idx.db.Model(&WordFrequencyRecord{}).
+		Select("word_frequency_records.word_id, words.name, SUM(word_frequency_records.count) as total_count").
+		Joins("JOIN words ON words.id = word_frequency_records.word_id").
+		Group("word_frequency_records.word_id, words.name").
+		Order("total_count ASC").
+		Limit(int(amount)).
+		Scan(&leastFrequentWords).Error
+	if err != nil {
+		return nil, err
+	}
+
+	// Convert most frequent words to map
+	for _, wordCount := range mostFrequentWords {
+		mostFrequentMap[wordCount.Name] = wordCount.TotalCount
+	}
+
+	// Convert least frequent words to map
+	for _, wordCount := range leastFrequentWords {
+		leastFrequentMap[wordCount.Name] = wordCount.TotalCount
+	}
+
+	return &StatResult{mostFrequentMap, leastFrequentMap}, nil
 }
 
 const batchSize = 1000

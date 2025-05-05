@@ -16,8 +16,8 @@ func (memoryIndex *MemoryIndex) containsUrl(s string) bool {
 	return memoryIndex.Index[s] != nil
 }
 
-func (memoryIndex *MemoryIndex) getStatResults(amount uint) *StatResult {
-	return &StatResult{WordMap{}, WordMap{}}
+func (memoryIndex *MemoryIndex) getStatResults(amount uint) (*StatResult, error) {
+	return &StatResult{WordMap{}, WordMap{}}, nil
 }
 
 func newMemoryIndex() *MemoryIndex {

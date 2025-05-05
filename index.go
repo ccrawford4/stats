@@ -7,7 +7,7 @@ type UrlEntry struct {
 
 type (
 	UrlMap  map[string]UrlEntry
-	WordMap map[string]uint
+	WordMap map[string]int
 )
 
 type SearchResult struct {
@@ -27,5 +27,5 @@ type Index interface {
 	search(word string) *SearchResult
 	getTotalWords(url string) int
 	insertCrawlResults(c *CrawlResult)
-	getStatResults(amount uint) *StatResult
+	getStatResults(amount uint) (*StatResult, error)
 }

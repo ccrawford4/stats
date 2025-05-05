@@ -4,6 +4,7 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"strconv"
 	"time"
 
 	"github.com/gin-contrib/cors"
@@ -58,17 +59,26 @@ func main() {
 	})
 
 	router.GET("/stats", func(c *gin.Context) {
-		type StatRequestBody struct {
-			Amount uint
+		stats, err := idx.getStatResults(5) // Default amount is 5
+		if err != nil {
+			c.IndentedJSON(http.StatusInternalServerError, gin.H{"error": err})
+		}
+		c.IndentedJSON(200, gin.H{"success": true, "results": stats})
+	})
+
+	router.GET("/stats/:amount", func(c *gin.Context) {
+		amountStr := c.Param("amount")
+		amount, err := strconv.ParseUint(amountStr, 10, 32)
+		if err != nil {
+			c.JSON(http.StatusBadRequest, gin.H{"success": false, "error": "Invalid amount parameter"})
+			return
 		}
 
-		var statRequestBody StatRequestBody
-		if err := c.BindJSON(&statRequestBody); err != nil {
-			c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		stats, err := idx.getStatResults(uint(amount))
+		if err != nil {
+			c.IndentedJSON(http.StatusInternalServerError, gin.H{"error": err})
 		}
-		stats := idx.getStatResults(statRequestBody.Amount)
-
-		c.IndentedJSON(200, gin.H{"success": "true", "results": stats})
+		c.IndentedJSON(200, gin.H{"success": true, "results": stats})
 	})
 
 	err = router.Run(":8080")
