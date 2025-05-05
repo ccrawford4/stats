@@ -71,6 +71,7 @@ func main() {
 		amountStr := c.Param("amount")
 		amount, err := strconv.ParseUint(amountStr, 10, 32)
 		if err != nil {
+			log.Printf("[ERROR]: %s", err)
 			c.JSON(http.StatusBadRequest, gin.H{"success": false, "error": "Invalid amount parameter"})
 			return
 		}
