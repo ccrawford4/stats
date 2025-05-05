@@ -1,2 +1,1 @@
-# stats
-API to provide statistics on popular words at USF
+# Building a Search Engine in Go
