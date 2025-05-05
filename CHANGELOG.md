@@ -1,3 +1,16 @@
+# 1.0.0 (2025-05-05)
+
+
+### Bug Fixes
+
+* added endpoint ([8c3d286](https://github.com/ccrawford4/stats/commit/8c3d286a140262773711e60fc671a27f167d0813))
+
+
+### Features
+
+* added logging ([bcbf2d4](https://github.com/ccrawford4/stats/commit/bcbf2d4987835d956e633bd3d8d1fc1d38cb0a8b))
+* initial commit ([637d3cd](https://github.com/ccrawford4/stats/commit/637d3cd80902a97a0b1a12b4d09bdd72ead38778))
+
 ## [1.10.1](https://github.com/ccrawford4/search/compare/v1.10.0...v1.10.1) (2025-05-05)
 
 
