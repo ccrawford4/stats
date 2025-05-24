@@ -83,7 +83,7 @@ func main() {
 		c.IndentedJSON(200, gin.H{"success": true, "results": stats})
 	})
 
-	err = router.Run(":8080")
+	err = router.Run(":8081")
 	if err != nil {
 		return
 	}

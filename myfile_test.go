@@ -8,7 +8,7 @@ import (
 
 func init() {
 	go func() {
-		port := 8080
+		port := 8081
 		err := http.ListenAndServe(fmt.Sprintf(":%d", port), nil)
 		if err != nil {
 			log.Fatalf("Error starting server: %v", err.Error())

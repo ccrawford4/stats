@@ -42,35 +42,35 @@ func TestCrawl(t *testing.T) {
 			newMemoryIndex(),
 			&MemoryIndex{
 				UrlMap{
-					"http://127.0.0.1:8080/": UrlEntry{8,
+					"http://127.0.0.1:8081/": UrlEntry{8,
 						"",
 						"",
 					},
 				},
 				IndexMap{
 					"there": Frequency{
-						"http://127.0.0.1:8080/": 1,
+						"http://127.0.0.1:8081/": 1,
 					},
 					"are": Frequency{
-						"http://127.0.0.1:8080/": 1,
+						"http://127.0.0.1:8081/": 1,
 					},
 					"no": Frequency{
-						"http://127.0.0.1:8080/": 1,
+						"http://127.0.0.1:8081/": 1,
 					},
 					"link": Frequency{
-						"http://127.0.0.1:8080/": 1,
+						"http://127.0.0.1:8081/": 1,
 					},
 					"here": Frequency{
-						"http://127.0.0.1:8080/": 1,
+						"http://127.0.0.1:8081/": 1,
 					},
 					"hello": Frequency{
-						"http://127.0.0.1:8080/": 1,
+						"http://127.0.0.1:8081/": 1,
 					},
 					"cs": Frequency{
-						"http://127.0.0.1:8080/": 1,
+						"http://127.0.0.1:8081/": 1,
 					},
 					"272": Frequency{
-						"http://127.0.0.1:8080/": 1,
+						"http://127.0.0.1:8081/": 1,
 					},
 				},
 			},
@@ -90,12 +90,12 @@ func TestCrawl(t *testing.T) {
 			newMemoryIndex(),
 			&MemoryIndex{
 				UrlMap{
-					"http://127.0.0.1:8080/": UrlEntry{
+					"http://127.0.0.1:8081/": UrlEntry{
 						7,
 						"",
 						"",
 					},
-					"http://127.0.0.1:8080/tests/project01/simple.html": UrlEntry{
+					"http://127.0.0.1:8081/tests/project01/simple.html": UrlEntry{
 						8,
 						"",
 						"",
@@ -103,46 +103,46 @@ func TestCrawl(t *testing.T) {
 				},
 				IndexMap{
 					"there": Frequency{
-						"http://127.0.0.1:8080/tests/project01/simple.html": 1,
+						"http://127.0.0.1:8081/tests/project01/simple.html": 1,
 					},
 					"are": Frequency{
-						"http://127.0.0.1:8080/tests/project01/simple.html": 1,
+						"http://127.0.0.1:8081/tests/project01/simple.html": 1,
 					},
 					"no": Frequency{
-						"http://127.0.0.1:8080/tests/project01/simple.html": 1,
+						"http://127.0.0.1:8081/tests/project01/simple.html": 1,
 					},
 					"link": Frequency{
-						"http://127.0.0.1:8080/tests/project01/simple.html": 1,
+						"http://127.0.0.1:8081/tests/project01/simple.html": 1,
 					},
 					"here": Frequency{
-						"http://127.0.0.1:8080/tests/project01/simple.html": 1,
+						"http://127.0.0.1:8081/tests/project01/simple.html": 1,
 					},
 					"hello": Frequency{
-						"http://127.0.0.1:8080/tests/project01/simple.html": 1,
+						"http://127.0.0.1:8081/tests/project01/simple.html": 1,
 					},
 					"cs": Frequency{
-						"http://127.0.0.1:8080/tests/project01/simple.html": 1,
+						"http://127.0.0.1:8081/tests/project01/simple.html": 1,
 					},
 					"272": Frequency{
-						"http://127.0.0.1:8080/tests/project01/simple.html": 1,
+						"http://127.0.0.1:8081/tests/project01/simple.html": 1,
 					},
 					"a": Frequency{
-						"http://127.0.0.1:8080/": 1,
+						"http://127.0.0.1:8081/": 1,
 					},
 					"see": Frequency{
-						"http://127.0.0.1:8080/": 1,
+						"http://127.0.0.1:8081/": 1,
 					},
 					"simpl": Frequency{
-						"http://127.0.0.1:8080/": 2,
+						"http://127.0.0.1:8081/": 2,
 					},
 					"exampl": Frequency{
-						"http://127.0.0.1:8080/": 1,
+						"http://127.0.0.1:8081/": 1,
 					},
 					"for": Frequency{
-						"http://127.0.0.1:8080/": 1,
+						"http://127.0.0.1:8081/": 1,
 					},
 					"html": Frequency{
-						"http://127.0.0.1:8080/": 1,
+						"http://127.0.0.1:8081/": 1,
 					},
 				},
 			},
@@ -164,17 +164,17 @@ func TestCrawl(t *testing.T) {
 			newMemoryIndex(),
 			&MemoryIndex{
 				UrlMap{
-					"http://127.0.0.1:8080/": UrlEntry{
+					"http://127.0.0.1:8081/": UrlEntry{
 						16,
 						"Style",
 						"",
 					},
-					"http://127.0.0.1:8080/tests/project01/href.html": UrlEntry{
+					"http://127.0.0.1:8081/tests/project01/href.html": UrlEntry{
 						7,
 						"",
 						"",
 					},
-					"http://127.0.0.1:8080/tests/project01/simple.html": UrlEntry{
+					"http://127.0.0.1:8081/tests/project01/simple.html": UrlEntry{
 						8,
 						"",
 						"",
@@ -182,72 +182,72 @@ func TestCrawl(t *testing.T) {
 				},
 				IndexMap{
 					"there": Frequency{
-						"http://127.0.0.1:8080/tests/project01/simple.html": 1,
+						"http://127.0.0.1:8081/tests/project01/simple.html": 1,
 					},
 					"are": Frequency{
-						"http://127.0.0.1:8080/tests/project01/simple.html": 1,
+						"http://127.0.0.1:8081/tests/project01/simple.html": 1,
 					},
 					"no": Frequency{
-						"http://127.0.0.1:8080/tests/project01/simple.html": 1,
+						"http://127.0.0.1:8081/tests/project01/simple.html": 1,
 					},
 					"link": Frequency{
-						"http://127.0.0.1:8080/":                             2,
+						"http://127.0.0.1:8081/":                             2,
 						"http://127.0.0.1:56038/tests/project01/simple.html": 1,
 					},
 					"here": Frequency{
-						"http://127.0.0.1:8080/":                            1,
-						"http://127.0.0.1:8080/tests/project01/simple.html": 1,
+						"http://127.0.0.1:8081/":                            1,
+						"http://127.0.0.1:8081/tests/project01/simple.html": 1,
 					},
 					"hello": Frequency{
-						"http://127.0.0.1:8080/tests/project01/simple.html": 1,
+						"http://127.0.0.1:8081/tests/project01/simple.html": 1,
 					},
 					"cs": Frequency{
-						"http://127.0.0.1:8080/tests/project01/simple.html": 1,
+						"http://127.0.0.1:8081/tests/project01/simple.html": 1,
 					},
 					"272": Frequency{
-						"http://127.0.0.1:8080/tests/project01/simple.html": 1,
+						"http://127.0.0.1:8081/tests/project01/simple.html": 1,
 					},
 					"a": Frequency{
-						"http://127.0.0.1:8080/":                          2,
-						"http://127.0.0.1:8080/tests/project01/href.html": 1,
+						"http://127.0.0.1:8081/":                          2,
+						"http://127.0.0.1:8081/tests/project01/href.html": 1,
 					},
 					"see": Frequency{
-						"http://127.0.0.1:8080/tests/project01/href.html": 1,
+						"http://127.0.0.1:8081/tests/project01/href.html": 1,
 					},
 					"simpl": Frequency{
-						"http://127.0.0.1:8080/":                          1,
-						"http://127.0.0.1:8080/tests/project01/href.html": 2,
+						"http://127.0.0.1:8081/":                          1,
+						"http://127.0.0.1:8081/tests/project01/href.html": 2,
 					},
 					"exampl": Frequency{
-						"http://127.0.0.1:8080/tests/project01/href.html": 1,
+						"http://127.0.0.1:8081/tests/project01/href.html": 1,
 					},
 					"for": Frequency{
-						"http://127.0.0.1:8080/tests/project01/href.html": 1,
+						"http://127.0.0.1:8081/tests/project01/href.html": 1,
 					},
 					"html": Frequency{
-						"http://127.0.0.1:8080/":                          2,
-						"http://127.0.0.1:8080/tests/project01/href.html": 1,
+						"http://127.0.0.1:8081/":                          2,
+						"http://127.0.0.1:8081/tests/project01/href.html": 1,
 					},
 					"is": Frequency{
-						"http://127.0.0.1:8080/": 1,
+						"http://127.0.0.1:8081/": 1,
 					},
 					"to": Frequency{
-						"http://127.0.0.1:8080/": 2,
+						"http://127.0.0.1:8081/": 2,
 					},
 					"and": Frequency{
-						"http://127.0.0.1:8080/": 1,
+						"http://127.0.0.1:8081/": 1,
 					},
 					"red": Frequency{
-						"http://127.0.0.1:8080/": 1,
+						"http://127.0.0.1:8081/": 1,
 					},
 					"blue": Frequency{
-						"http://127.0.0.1:8080/": 1,
+						"http://127.0.0.1:8081/": 1,
 					},
 					"href": Frequency{
-						"http://127.0.0.1:8080/": 1,
+						"http://127.0.0.1:8081/": 1,
 					},
 					"style": Frequency{
-						"http://127.0.0.1:8080/": 1,
+						"http://127.0.0.1:8081/": 1,
 					},
 				},
 			},
@@ -269,12 +269,12 @@ func TestCrawl(t *testing.T) {
 
 			&MemoryIndex{
 				UrlMap{
-					"http://127.0.0.1:8080/": UrlEntry{
+					"http://127.0.0.1:8081/": UrlEntry{
 						0,
 						"",
 						"",
 					},
-					"http://127.0.0.1:8080/repeat-href": UrlEntry{
+					"http://127.0.0.1:8081/repeat-href": UrlEntry{
 						0,
 						"",
 						"",
@@ -296,7 +296,7 @@ func TestCrawl(t *testing.T) {
 			newMemoryIndex(),
 			&MemoryIndex{
 				UrlMap{
-					"http://127.0.0.1:8080/": UrlEntry{
+					"http://127.0.0.1:8081/": UrlEntry{
 						0,
 						"",
 						"",
